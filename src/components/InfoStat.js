@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const InfoStat = (props) => {
     return (
@@ -11,4 +11,4 @@ const InfoStat = (props) => {
     )
 }
 
-export default InfoStat;
+export default InfoStat

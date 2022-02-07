@@ -1,67 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import { fetchCountryInfo, getAllData  } from '../API';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { fetchCountryInfo, getAllData } from '../API'
+import { useDispatch,useSelector } from "react-redux";
 import MainBlock from '../components/MainBlock';
 import MainHeaderBlock from '../components/MainHeaderBlock';
 
+
 const Main = () => {
-  const dispatch = useDispatch();
-  const [countryState, setCountryState] = useState('TotalConfirmed')
-  const [reverse, setReverse] = useState(false)
+    const dispatch = useDispatch();
+   const [countryState, setCountryState] = useState('TotalConfirmed')
+   const [reverse, setReverse] = useState(false)
    //const [metric, setMetric] = useState('TotalConfirmed')
-  const [countriesupdated, setcountriesupdated] = useState(false)
-  if (countriesupdated == true) {
+   const [countriesupdated, setcountriesupdated] = useState(false)
+   if (countriesupdated == true) {
+       
+       setcountriesupdated(false)
+   }
+    
+    useEffect(() => {
+        dispatch(fetchCountryInfo())
 
-      setcountriesupdated(false)
-  }
-
-
-  useEffect(() => {
-    dispatch(fetchCountryInfo())
-  }, []);
-  let countries = useSelector((state) => state);
+      },[]);
+      let countries = useSelector((state) => state);
       //setCountryState(countries)
+      
       const changeMetric = (e) => {
-          let metric = e.target.value
-          setcountriesupdated(metric)
-          updateList()
-        }
-        const updateList = () => {
-            countries = countries.sort((a,b) => b[countriesupdated] - a[countriesupdated])
-            alert(reverse)
-        }
-          const changeOrder = (e) => {
-            countries = countries.reverse()
-            setReverse(e.target.value)
+       let metric = e.target.value
+       
+       setcountriesupdated(metric)
+      updateList()
     }
-
-  return (
-    <div>
-      <MainHeaderBlock />
+    const updateList = () => {
+        countries = countries.sort((a,b) => b[countriesupdated] - a[countriesupdated])
+        alert(reverse)
+    }
+      const changeOrder = (e) => {
+        countries = countries.reverse()
+        setReverse(e.target.value)
+    }
+    return (
+        <div>
+            <MainHeaderBlock />
             <div className="indicationStripe">
-            stats sorted by:
+                stats sorted by: 
                 <select onChange={changeMetric} name="" id="">
                     <option value="TotalConfirmed">Total cases</option>
                     <option value="TotalDeaths">Total deaths</option>
-                    <option value="TotalRecovered">Total recovered</option>
                     <option value="NewConfirmed">New cases</option>
                     <option value="NewDeaths">New deaths</option>
-                    <option value="NewRecovered">New recovered</option>
                 </select>
                 <select onChange={changeOrder} name="" id="">
                     <option value='normal'>high to low</option>
                     <option value='reversed'>Low to high</option>
                 </select>
             </div>
-      <div className='mainCountryWrapper'>
-      {Countries.map((countrObj) =>
-        <MainBlock obj={countrObj} curmetric={countriesupdated} />
-      )}
-      </div>
-      hello
-
-    </div>
-  )
+            <div className='mainCountryWrapper'>
+          {countries.map((countrObj) => 
+              <MainBlock obj={countrObj} curmetric={countriesupdated} />
+          )}
+          </div>
+          hello
+          
+        </div>
+    )
 }
 
-export default Main;
+export default Main
