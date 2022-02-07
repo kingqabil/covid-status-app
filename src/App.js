@@ -1,24 +1,34 @@
+import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './pages/Main';
 import { getAllData } from './API';
-import reactDom from 'react-dom';
-import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 import store from './redux/store';
+import InfoPage from './pages/InfoPage';
+import Navbar from './components/Navbar';
+
 
 function App() {
-  console.log(getAllData())
+  
+  
   return (
     <div className="App">
-      <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Main />}>
+       <Provider store={store}>
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<><Navbar page='Country data' /><Main /></>}>
+          <Route index element={<Navbar />} />
 
-          </Route>
-        </Routes>
-      </Router>
-      </Provider>
+        </Route>
+        <Route path="/infopage/:country" element={<><Navbar page='Country data' /><InfoPage /></>}>
+          {/* <Route index element={<Main />} /> */}
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    </Provider>
     </div>
   );
 }
