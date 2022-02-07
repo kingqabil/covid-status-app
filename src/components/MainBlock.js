@@ -3,7 +3,11 @@ import React from "react";
 const MainBlock = (props) => {
   return (
     <div class='mainCountryBlock'>
-      {props.txt}
+      <div>
+      {props.obj.Country}
+
+      </div>
+      <img className='countryImg' src={`/all/${props.obj.CountryCode.toLowerCase()}/vector.svg`} alt="" />
     </div>
   )
 }
