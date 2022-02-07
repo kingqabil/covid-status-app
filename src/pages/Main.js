@@ -14,11 +14,13 @@ const Main = () => {
 
   return (
     <div>
+      <div className='mainCountryWrapper'>
       {Countries.map((countrObj) =>
         <MainBlock txt={countrObj} />
       )}
+      </div>
       hello
-      
+
     </div>
   )
 }

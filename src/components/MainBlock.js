@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const MainBlock = (props) => {
   return (
+    <Link to='/infopage'>
     <div class='mainCountryBlock'>
       <div>
       {props.obj.Country}
@@ -9,6 +11,7 @@ const MainBlock = (props) => {
       </div>
       <img className='countryImg' src={`/all/${props.obj.CountryCode.toLowerCase()}/vector.svg`} alt="" />
     </div>
+    </Link>
   )
 }
 
