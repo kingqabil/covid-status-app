@@ -14,6 +14,10 @@ const Main = () => {
 
   return (
     <div>
+      <MainHeaderBlock />
+            <div className="indicationStripe">
+                stats:
+            </div>
       <div className='mainCountryWrapper'>
       {Countries.map((countrObj) =>
         <MainBlock txt={countrObj} />
