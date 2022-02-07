@@ -6,7 +6,8 @@ import MainHeaderBlock from '../components/MainHeaderBlock';
 
 const Main = () => {
   const dispatch = useDispatch();
-  const [countryState, setCountryState] = useState([])
+  const [countryState, setCountryState] = useState('TotalConfirmed')
+   //const [metric, setMetric] = useState('TotalConfirmed')
   const [countriesupdated, setcountriesupdated] = useState(false)
   if (countriesupdated == true) {
 
@@ -20,11 +21,9 @@ const Main = () => {
   let countries = useSelector((state) => state);
       //setCountryState(countries)
       const changeMetric = (e) => {
-          const metric = e.target.value
+          let metric = e.target.value
           countries = countries.sort((a,b) => b[metric] - a[metric])
-          setcountriesupdated(true)
-          //alert(countries[10].Country)
-        //alert(metric)
+          setcountriesupdated(metric)
     }
 
   return (
@@ -42,7 +41,7 @@ const Main = () => {
             </div>
       <div className='mainCountryWrapper'>
       {Countries.map((countrObj) =>
-        <MainBlock txt={countrObj} />
+        <MainBlock obj={countrObj} curmetric={countriesupdated} />
       )}
       </div>
       hello

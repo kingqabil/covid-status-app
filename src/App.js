@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './pages/Main';
 import { getAllData } from './API';
 import reactDom from 'react-dom';
@@ -12,13 +12,13 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path="/infopage/:country" element={<InfoPage />}>
 
           </Route>
         </Routes>
-      </Router>
+      </BrowserRouter>
       </Provider>
     </div>
   );
