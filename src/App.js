@@ -5,6 +5,7 @@ import { getAllData } from './API';
 import reactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import InfoPage from './pages/InfoPage';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
       <Provider store={store}>
       <Router>
         <Routes>
-          <Route path="/" element={<Main />}>
+          <Route path="/infopage/:country" element={<InfoPage />}>
 
           </Route>
         </Routes>
