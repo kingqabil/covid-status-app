@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchCountryInfo, getAllData  } from '../API';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -8,8 +8,8 @@ const Main = () => {
 
   useEffect(() => {
     dispatch(fetchCountryInfo())
-  }, [])
-  
+  }, []);
+
   return (
     <div>
       hello

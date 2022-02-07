@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-const axios = require('axios');
+import axios from "axios";
 
 export const baseurl = 'https://api.covid19api.com/summary';
 export const getAllData = () => axios.get(baseurl)
