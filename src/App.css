@@ -44,23 +44,32 @@ nav{
 }
 .toInfoCircle{
  position: relative;
- left:180px;
- top:-117px;
- 
+ left:60px;
+ top:-35px;
+
 }
 .mainCountryBlock{
-  width:200px;
-  
+  min-width:200px;
+  padding:20px 0;
   display: inline-block;
+  margin-top: -22px;
 }
 .mainCountryWrapper{
   display: flex;
-  flex-wrap: wrap;
+  background-color: green;
 }
-.mainCountryWrapper > *{
-  flex: 1;
-  
+
+.indicationStripe{
+  display: flex;
+  background-color: hotpink;
+  text-align: left;
 }
+
+.selects > *{
+  height: 30px;
+  margin-left: 5px;
+}
+
 .countryImg{
   width: 50%;
 }
@@ -80,7 +89,7 @@ align-items: center;
   padding:30px;
   display: flex;
   justify-content: space-between;
-  
+
   font-size: 200%;
 }
 .infoStatsBlock:nth-child(odd){
@@ -98,6 +107,14 @@ align-items: center;
 .infoheaderRight{
   font-size: 130%;
 }
+
+.evencol{
+  background-color: rgb(212, 61, 86);
+}
+.oddcol{
+  background-color: rgb(168, 71, 87);
+}
+
 .mainHeaderBlock{
   background-color: rgb(201, 48, 125);
 display: flex;
@@ -106,5 +123,5 @@ align-items: center;
 .mainHeaderBlock > *{
 width: 50%;
 padding:20px;
-  
+
 }
