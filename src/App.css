@@ -37,6 +37,13 @@
   }
 }
 
+nav{
+  background-color: hotpink;
+  display: flex;
+  justify-content: space-between;
+  padding:5px;
+}
+
 .mainCountryBlock{
   width: 200px;
 
