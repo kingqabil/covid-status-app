@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { fetchCountryInfo, getAllData } from '../API';
+import { fetchCountryInfo } from '../API';
 import MainBlock from '../components/MainBlock';
 import MainHeaderBlock from '../components/MainHeaderBlock';
 
@@ -11,7 +11,13 @@ const Main = () => {
   const [reverse, setReverse] = useState(false);
   const [countriesupdated, setcountriesupdated] = useState(false);
 
-  if (countriesupdated == true) {
+  if (countriesupdated === 'superdata') {
+    setcountriesupdated(reverse);
+    setcountriesupdated(countryState);
+    setCountryState('vaccinedata');
+  }
+
+  if (countriesupdated === true) {
     setcountriesupdated(false);
   }
 
@@ -19,6 +25,11 @@ const Main = () => {
     dispatch(fetchCountryInfo());
   }, []);
   let countries = useSelector((state) => state);
+  const updateList = () => {
+    countries = countries.sort(
+      (a, b) => b[countriesupdated] - a[countriesupdated],
+    );
+  };
 
   const changeMetric = (e) => {
     const metric = e.target.value;
@@ -26,16 +37,11 @@ const Main = () => {
     setcountriesupdated(metric);
     updateList();
   };
-  const updateList = () => {
-    countries = countries.sort(
-      (a, b) => b[countriesupdated] - a[countriesupdated],
-    );
-  };
+
   const changeOrder = (e) => {
     countries = countries.reverse();
     setReverse(e.target.value);
   };
-
   return (
     <div>
       <MainHeaderBlock />
@@ -69,5 +75,4 @@ const Main = () => {
     </div>
   );
 };
-
 export default Main;

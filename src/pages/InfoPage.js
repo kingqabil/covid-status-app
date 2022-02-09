@@ -6,11 +6,11 @@ import InfoStat from '../components/InfoStat';
 const InfoPage = () => {
   const { country } = useParams();
   const countries = useSelector((state) => state);
-  const countryObj = countries.find((element) => element.Country == country);
-  console.log(countryObj);
+  const countryObj = countries.find((element) => element.Country === country);
   return (
     <div>
       <div className="infohead">
+
         <div className="infoheaderLeft">
           <img className="countryImgInfoPage" src={`/all/${countryObj.CountryCode.toLowerCase()}/vector.svg`} alt="" />
         </div>
@@ -25,9 +25,7 @@ const InfoPage = () => {
       <InfoStat metric="Total deaths:" amount={countryObj.TotalDeaths} />
       <InfoStat metric="New cases:" amount={countryObj.TotalDeaths} />
       <InfoStat metric="New deaths:" amount={countryObj.TotalDeaths} />
-
     </div>
   );
 };
-
 export default InfoPage;
