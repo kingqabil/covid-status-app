@@ -2,6 +2,7 @@ import React from 'react'
 import { BsChevronLeft } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
+
 const Navbar = (props) => {
     return (
         <nav>

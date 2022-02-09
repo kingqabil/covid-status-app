@@ -10,7 +10,7 @@ const InfoPage = () => {
     console.log(countryObj)
     return (
         <div>
-            <div className='infoheader'>
+            <div className='infohead'>
                 <div className="infoheaderLeft">
                 <img className='countryImgInfoPage' src={`/all/${countryObj.CountryCode.toLowerCase()}/vector.svg`} alt="" />
                 </div>
@@ -25,7 +25,8 @@ const InfoPage = () => {
             <InfoStat metric='Total deaths:' amount={countryObj.TotalDeaths} />
             <InfoStat metric='New cases:' amount={countryObj.TotalDeaths} />
             <InfoStat metric='New deaths:' amount={countryObj.TotalDeaths} />
-
+            
+            
         </div>
     )
 }
