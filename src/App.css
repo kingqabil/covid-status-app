@@ -1,3 +1,11 @@
+:root {
+  --accentcolor: #EC4C8A;
+  --mainbgcolor: #F94E8F;
+  --stripecolor:#DF4782;
+  --blockcolor1:#DC4781;
+  --blockcolor2:#D14479;
+}
+
 .App {
   text-align: center;
   font-size: 120%;
@@ -8,7 +16,7 @@ body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 nav{
-  background-color: hotpink;
+  background-color: var(--accentcolor);
   display: flex;
   justify-content: space-between;
   padding:5px;
@@ -16,8 +24,10 @@ nav{
   font-weight: 300;
 }
 .toInfoCircle{
-
-
+  position: relative;
+  top: -99px;
+  left: 26px;
+  color: white;
 }
 .mainCountryBlock{
   min-width:200px;
@@ -27,6 +37,12 @@ nav{
 .mainCountryWrapper{
   display: flex;
   background-color: green;
+}
+
+.mainTxtStripe{
+  background-color: var(--stripecolor);
+  text-align: left;
+  padding-left: 5px;
 }
 
 .indicationStripe{
