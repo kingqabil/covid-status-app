@@ -3,12 +3,12 @@ const countries = () => Promise.resolve({
     {
       CountryCode: 'BE',
       Country: 'Belgium',
-      TotalCases:254654
+      TotalCases: 254654,
     },
     {
       CountryCode: 'DE',
       Country: 'Germany',
-      TotalCases:110293
+      TotalCases: 110293,
     },
   ],
 });
