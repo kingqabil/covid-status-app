@@ -9,7 +9,7 @@ exports[`Test if navbar renders correctly 1`] = `
   <div
     className="right"
   >
-
+          
   </div>
 </nav>
 `;
