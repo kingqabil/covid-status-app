@@ -42,6 +42,7 @@ const Main = () => {
     countries = countries.reverse();
     setReverse(e.target.value);
   };
+
   return (
     <div>
       <MainHeaderBlock />
@@ -75,4 +76,5 @@ const Main = () => {
     </div>
   );
 };
+
 export default Main;

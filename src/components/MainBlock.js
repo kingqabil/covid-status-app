@@ -29,7 +29,7 @@ const MainBlock = (props) => {
     } else {
       colClass = 'oddcol';
     }
-  } else if ((index) % 2 == 1) {
+  } else if ((index) % 2 === 1) {
     colClass = 'evencol';
   } else {
     colClass = 'oddcol';

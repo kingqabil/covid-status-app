@@ -16,7 +16,7 @@ function App() {
               path="/"
               element={(
                 <>
-                  <Navbar page="Country data" />
+                  <Navbar page="World data" />
                   <Main />
                 </>
 )}
