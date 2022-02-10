@@ -14,17 +14,23 @@ const InfoPage = () => {
           <img className="countryImgInfoPage" src={`/all/${countryObj.CountryCode.toLowerCase()}/vector.svg`} alt="" />
         </div>
         <div className="infoheaderRight">
-          {countryObj.Country}
+          <h2>{countryObj.Country}</h2>
+          <p>
+            Total Cases:
+            <br />
+            {countryObj.TotalConfirmed}
+            <br />
+            **
+          </p>
         </div>
       </div>
       <div className="mainTxtStripe">
         stats:
       </div>
-      <InfoStat metric="Total casess:" amount={countryObj.TotalConfirmed} />
-      <InfoStat metric="Total deaths:" amount={countryObj.TotalDeaths} />
-      <InfoStat metric="New cases:" amount={countryObj.TotalDeaths} />
-      <InfoStat metric="New deaths:" amount={countryObj.TotalDeaths} />
-
+      <InfoStat metric="New Confirmed Cases:" amount={countryObj.NewConfirmed} />
+      <InfoStat metric="Total Confirmed Cases:" amount={countryObj.TotalConfirmed} />
+      <InfoStat metric="New Confirmed Deaths:" amount={countryObj.NewDeaths} />
+      <InfoStat metric="Total Confirmed Deaths:" amount={countryObj.TotalDeaths} />
     </div>
   );
 };

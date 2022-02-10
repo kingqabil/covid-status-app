@@ -72,7 +72,6 @@ const Main = () => {
           />
         ))}
       </div>
-      hello
     </div>
   );
 };
